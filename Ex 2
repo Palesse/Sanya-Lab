@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include<math.h>
+#include<locale.h>
+
+int main(void) {
+	setlocale(LC_ALL, "Russian");
+	
+	float x, y, f;
+
+	printf("Введите x  \n");
+	scanf_s("%f ", &x);
+	printf("Введите y  \n");
+	scanf_s("%f ", &y);
+
+	f = ((53,1 * exp(-5) * cbrt(x * y * y)) + tan(log(x / y))) / (2, 2 * (x * x * x + 1) * sin(y + 1));
+	printf("Результат: %.3f", f);
+	
+	return 0;
+}
