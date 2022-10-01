@@ -1,0 +1,77 @@
+#include <stdio.h>
+#include <locale.h>
+#include <math.h>
+
+int main(void) {
+
+	setlocale(LC_ALL, "Russian");
+
+	float x1, x2, x3, y1, y2, y3;
+	float a11, a12, a21, a22, a31, a32;
+	float l1, l2, l3;
+	float p,pp, s;
+	int q = 0;
+	while (q != 2) {
+		printf("Введите координату x первой точки: \n ");
+		scanf_s("%f", &x1);
+		printf("Введите координату y первой точки: \n ");
+		scanf_s("%f", &y1);
+		printf("Введите координату x второй точки: \n ");
+		scanf_s("%f", &x2);
+		printf("Введите координату y второй точки: \n ");
+		scanf_s("%f", &y2);
+		printf("Введите координату x третьей точки: \n ");
+		scanf_s("%f", &x3);
+		printf("Введите координату y третьей точки: \n ");
+		scanf_s("%f", &y3);
+
+		int i = 0;
+
+		if (x1 == x2)
+			i++;
+
+		if (x2 == x3)
+			i++;
+
+		if (x3 == x1)
+			i++;
+
+		if (i != 3)
+			q++;
+
+		int k = 0;
+
+		if (y1 == y2)
+			k++;
+
+		if (y2 == y3)
+			k++;
+
+		if (y3 == y1)
+			k++;
+
+		if (k != 3)
+			q++;
+		if (q != 2)
+			printf("Введены недопустимые значения!\n");
+	}
+	a11 = x2 - x1;
+	a12 = y2 - y1;
+	l1 = sqrt(a11 * a11 + a12 * a12);
+
+	a21 = x3 - x2;
+	a22 = y3 - y2;
+	l2 = sqrt(a21 * a21 + a22 * a22);
+
+	a31 = x1 - x3;
+	a32 = y1 - y3;
+	l3 = sqrt(a31 * a31 + a32 * a32);
+	p = l1 + l2 + l3;
+	pp = p / 2;
+	s = sqrt(pp * (pp - l1) * (pp - l2) * (pp - l3));
+
+	printf("Периметр = %.2f\n", p );
+	printf("Площадь = %.2f \n", s );
+		
+	return 0;
+}
