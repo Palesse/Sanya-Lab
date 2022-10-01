@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<locale>
+
+int main(void) {
+
+	setlocale(LC_ALL, "Russian");
+
+	int k, l, m;
+	 
+	printf("Введите k \n");
+	scanf_s("%d", &k);
+	printf("Введите l \n");
+	scanf_s("%d", &l);
+	printf("Введите m \n");
+	scanf_s("%d", &m);
+
+	if (k > l && l > m) {
+		printf("Последовательность является убывающей \n");
+		
+	}
+	else {
+		printf("Последовательность не является убывающей \n");
+	}
+
+
+	return 0;
+
+}
